@@ -1,4 +1,4 @@
-################# Start of all the settings
+#DC00A6################# Start of all the settings
 
 # KEY DEFINITIONS TO REMEMBER
 # $mod = Set below
@@ -103,7 +103,7 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 ################# menu's in arcolinux
 
 # start rofi small
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -font "Hack Regular 13"
+bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -font "Hack 15"
 
 ################# how to exit, logoff, suspend, ...
 
@@ -240,7 +240,7 @@ bindsym $mod+Mod1+Ctrl+Left resize grow width 1 px or 1 ppt
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # choose your font
-font pango:Hack 13
+font pango:Hack Regular 13
 
 ################# assign applications to workspaces 
 
@@ -289,7 +289,7 @@ font pango:Hack 13
 # USER APPLICATIONS TO START AT BOOT
 
 # Wallpaper
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id ~/.fehbg &
 
 # Autotiling
 exec_always --no-startup-id autotiling
@@ -300,6 +300,9 @@ exec_always --no-startup-id sleep 3 && apple-music-for-linux
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
+# Tint2
+#exec_always --no-startup-id tint2
+
 ############################################################## TRAY APPLICATIONS
 
 # applications that are not installed will not start
@@ -309,19 +312,19 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Updater
-exec --no-startup-id pamac-tray
+#exec --no-startup-id pamac-tray
 
 # bluetooth
 # exec --no-startup-id blueberry-tray
 
 # network
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # num lock activated
 exec_always --no-startup-id numlockx on
 
 # volume
-exec --no-startup-id volumeicon
+#exec --no-startup-id volumeicon
 
 
 
@@ -340,12 +343,19 @@ bindsym $mod+Shift+p exec --no-startup-id /home/jdubbs13/vpnoff.sh
 
 # File Manager
 bindsym $mod+n exec thunar
+bindsym $mod+r exec kitty -e ranger
+
 
 # Browser
 bindsym $mod+w exec firefox
+bindsym $mod+b exec qutebrowser
 
 # Terminal
 bindsym $mod+Return exec --no-startup-id xfce4-terminal;focus
+
+# Terminal Fun
+bindsym $mod+p exec kitty -e pipes.sh -p5
+bindsym $mod+m exec kitty -e cmatrix
 
 ################# screenshots                      
 
