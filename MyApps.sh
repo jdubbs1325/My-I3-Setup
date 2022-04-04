@@ -4,3 +4,4 @@ deadbeef dunst &&
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
+&& sudo chmod +x MyApps.sh
