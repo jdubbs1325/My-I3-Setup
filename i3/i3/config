@@ -328,7 +328,7 @@ exec_always --no-startup-id numlockx on
 
 
 # Wallpaper
-exec --no-startup-id nitrogen --restore &
+ exec_always --no-startup-id nitrogen --restore &
 
 # Polybar
  exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -359,7 +359,7 @@ bindsym $mod+i exec --no-startup-id alacritty -e nvim
 # file management
 
 bindsym $mod+r exec --no-startup-id alacritty -e ranger;focus
-bindsym $mod+n exec --no-startup-id thunar;focus
+bindsym $mod+n exec --no-startup-id pcmanfm;focus
 
 
 
