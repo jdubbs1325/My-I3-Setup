@@ -28,8 +28,8 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = #FF0000
-format-background = #aa00FF00
+format-foreground = #0a0f14
+format-background = #0a0f14
 format-underline =
 format-overline =
 format-spacing =
@@ -39,8 +39,8 @@ format-offset =
 
 [colors]
 ; Nord theme ============
-background = #00000000
-foreground = #f3f4f5
+background = #2F343F
+foreground = #ffffff
 occupied = #cccccc
 active = #5e81ac
 alert = #d08770
@@ -110,19 +110,18 @@ border-color = #000000
 padding-left = 1
 padding-right = 1
 
-module-margin-left = 3
-module-margin-right = 3
+module-margin-left = 1
+module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Hack Regular:size=12;0"
-font-1 = "Hack Regular:size=12;0"
+font-0 = "Terminus:size=16;0"
+font-1 = "Terminus:size=16;0"
 font-2 = "FontAwesome:size=12;0"
-font-3 = "Hack Regular Mono:size=10;0"
+font-3 = "Terminus:size=16;0"
 
 modules-left = ewmh-noscroll
-modules-center = kernel
-modules-right = pub-ip temperature2 filesystem memory3 system-cpu-frequency date volume pamac-manager wired-network
-
+modules-center = 
+modules-right = kernel temperature2 filesystem memory3 system-cpu-frequency date volume pamac-manager pub-ip wired-network
 separator = |
 
 ;dim-value = 1.0
