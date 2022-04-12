@@ -109,26 +109,8 @@ bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons -font "Terminus 
 
 ################# how to exit, logoff, suspend, ...
 
-# Backup exit
-# Press ctrl+alt+x - check toolbar for next choices
-#bindsym control+mod1+X mode "$mode_system"
-
-set $mode_system System (k) lock, (l) logout, (u) suspend, (h) hibernate, (r) reboot, (s) shutdown
-mode "$mode_system" {
-    bindsym k exec --no-startup-id ~/.config/i3/scripts/i3exit.sh lock, mode "default"
-    bindsym l exec --no-startup-id ~/.config/i3/scripts/i3exit.sh logout, mode "default"
-    bindsym u exec --no-startup-id ~/.config/i3/scripts/i3exit.sh suspend, mode "default"
-    bindsym h exec --no-startup-id ~/.config/i3/scripts/i3exit.sh hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/.config/i3/scripts/i3exit.sh reboot, mode "default"
-    bindsym s exec --no-startup-id ~/.config/i3/scripts/i3exit.sh shutdown, mode "default"
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
 # ArcoLinux Logout
-bindsym $mod+X exec --no-startup-id arcolinux-logout
+bindsym $mod+X exec --no-startup-id /home/jdubbs13/.config/i3/scripts/power-menu.sh
 
 ################# reload changed configuration     
 
@@ -311,8 +293,6 @@ font pango:Terminus 15
 # Autotiling
 exec_always --no-startup-id autotiling
 
-
-
 # TRAY APPLICATIONS
 
 # applications that are not installed will not start
@@ -321,14 +301,11 @@ exec_always --no-startup-id autotiling
 # Authentication dialog
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-
 # num lock activated
 exec_always --no-startup-id numlockx on
 
-
-
 # Wallpaper
- exec_always --no-startup-id nitrogen --restore &
+ exec_always --no-startup-id feh --bg-fill --randomize /home/jdubbs13/wallpaper
 
 # Polybar
  exec_always --no-startup-id ~/.config/polybar/launch.sh &
@@ -346,22 +323,19 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty;focus
 
-
 # Function Keybinds
-
 bindsym $mod+w exec --no-startup-id firefox;focus
 
 # Neovim
-
 bindsym $mod+i exec --no-startup-id alacritty -e nvim
 
-
 # file management
-
 bindsym $mod+r exec --no-startup-id alacritty -e ranger;focus
 bindsym $mod+n exec --no-startup-id pcmanfm;focus
 
-
+# VPN
+bindsym $mod+Shift+o exec --no-startup-id /home/jdubbs13/vpn.sh
+bindsym $mod+Shift+p exec --no-startup-id /home/jdubbs13/vpnoff.sh
 
 
 ################# screenshots                      
@@ -447,10 +421,6 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
-################# bar toggle                       
-
-# bar toggle, hide or show
-bindsym $mod+b bar mode toggle
 
 ################# border control                   
 
@@ -532,10 +502,7 @@ mode "$mode_gaps_outer" {
 ################# picom of i3wm                  
 
 # if you want transparency on non-focused windows, ...
-exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-
-
-
+exec_always --no-startup-id picom --experimental-backends &
 
 ################ START THEMING WM
 #Theme name : ArcoLinux Zion
@@ -569,5 +536,4 @@ exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
     ##STOP THEMING WM
 
 ######################################## THE END 
-
 
