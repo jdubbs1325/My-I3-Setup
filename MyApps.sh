@@ -1,2 +1,2 @@
 #!/bin/sh
-pacman -S nitrogen htop transmission-gtk mpv alacritty pcmanfm firefox ranger xfce4-power-manager rofi neovim dunst polkit-gnome xfce4-power-manager picom
+pacman -S fsearch btop transmission-gtk mpv alacritty pcmanfm firefox ranger rofi neovim polkit-gnome xfce4-power-manager 
