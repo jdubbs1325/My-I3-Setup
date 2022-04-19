@@ -305,10 +305,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id numlockx on
 
 # Wallpaper
- exec_always --no-startup-id feh --bg-fill --randomize /home/jdubbs13/wallpaper
+bindsym $mod+Shift+w exec --no-startup-id feh --bg-fill --randomize /home/jdubbs13/wallpaper
+exec_always --no-startup-id feh --bg-fill --randomize /home/jdubbs13/wallpaper
 
 # Polybar
- exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 ################# system applications       
 
@@ -336,6 +337,7 @@ bindsym $mod+n exec --no-startup-id pcmanfm;focus
 # VPN
 bindsym $mod+Shift+o exec --no-startup-id /home/jdubbs13/vpn.sh
 bindsym $mod+Shift+p exec --no-startup-id /home/jdubbs13/vpnoff.sh
+
 
 
 ################# screenshots                      
