@@ -1,70 +1,89 @@
-env:
-  # This value is used to set the `$TERM` environment variable for
-  # each instance of Alacritty. If it is not present, alacritty will
-  # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
+schemes:
+  # Tokyo Night theme, based on both:
+  #   https://github.com/ghifarit53/tokyonight-vim
+  #   https://github.com/enkia/tokyo-night-vscode-theme
+  tokyo-night:
+    # Default colors
+    &tokyo-night
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
 
-window:
-  # Spread additional padding evenly around the terminal content.
-  padding:
-    x: 10
-    y: 10
-  # Remove buttons
-  decorations: none
-  # Open in full screen 
-  startup_mode: Windowed
-  # Dimensions if not SimpleFullscreen
-  dimensions:
-    columns: 140
-    lines: 38
+    # Normal colors
+    normal:
+      black: '0x32344a'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan: '0x449dab'
+      white: '0x787c99'
 
-# Make background slightly transparent
-window_opacity: 0.92
+    # Bright colors
+    bright:
+      black: '0x444b6a'
+      red: '0xff7a93'
+      green: '0xb9f27c'
+      yellow: '0xff9e64'
+      blue: '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan: '0x0db9d7'
+      white: '0xacb0d0'
 
-cursor:
-  # Block Underline or Beam
-  style: Block
+  tokyo-night-storm:
+    # Default colors
+    &tokyo-night-storm
+    primary:
+      background: '0x24283b'
+      foreground: '0xa9b1d6'
 
+    # Normal colors
+    normal:
+      black: '0x32344a'
+      red: '0xf7768e'
+      green: '0x9ece6a'
+      yellow: '0xe0af68'
+      blue: '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan: '0x449dab'
+      white: '0x9699a8'
+
+    # Bright colors
+    bright:
+      black: '0x444b6a'
+      red: '0xff7a93'
+      green: '0xb9f27c'
+      yellow: '0xff9e64'
+      blue: '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan: '0x0db9d7'
+      white: '0xacb0d0'
 font:
-  normal:
-    # Needs to be powerline font if using zsh theme with powerline
-    family: Terminus
-  # Font size
+  # The size to use.
   size: 16
+  # The normal (roman) font face to use.
+  normal:
+    family: Terminus
+    # Style can be specified to pick a specific face.
+    style: Bold
 
-  # Better font rendering for mac
-  use_thin_strokes: true
+  # The bold font face
+  bold:
+    family: Terminus
+    # Style can be specified to pick a specific face.
+    style: Bold
 
-items:
-  - colors:
-      name: 3024 (dark)
-      author: Chris Kempson
-      primary:
-        background: "#090300"
-        foreground: "#a5a2a2"
-      cursor:
-        text: "#090300"
-        cursor: "#a5a2a2"
-      normal:
-        black: "#090300"
-        red: "#db2d20"
-        green: "#01a252"
-        yellow: "#fded02"
-        blue: "#01a0e4"
-        magenta: "#a16a94"
-        cyan: "#b5e4f4"
-        white: "#a5a2a2"
-      bright:
-        black: "#5c5855"
-        red: "#db2d20"
-        green: "#01a252"
-        yellow: "#fded02"
-        blue: "#01a0e4"
-        magenta: "#a16a94"
-        cyan: "#b5e4f4"
-        white: "#f7f7f7"
-  - theme: 3024.dark
+  # The italic font face
+  italic:
+    family: Terminus
+    # Style can be specified to pick a specific face.
+    style: Italic
+
+key_bindings:
+  - { key: Q, mods: Control, chars: "\x11" }
+  - { key: Slash, mods: Control, chars: "\x1f" }
+  - { key: NumpadSubtract, mods: Control, action: None }
 colors:
   # Default colors
   primary:
@@ -92,4 +111,11 @@ colors:
     magenta: '#b4009e'
     cyan: '#61d6d6'
     white: '#f2f2f2'
+
+window:
+  opacity: 0.8
 theme: Campbell
+
+set preview_images: true
+set preview_images_method: ueberzug
+
