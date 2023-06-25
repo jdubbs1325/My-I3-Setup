@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nordvpn connect canada
+nordvpn connect United_Kingdom
