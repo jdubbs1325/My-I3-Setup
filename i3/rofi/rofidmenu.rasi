@@ -32,10 +32,7 @@ message {
     border:       2px 0px 0px;
     border-color: @separatorcolor;
     padding:      1px;
-}
-textbox {
-    text-color: FFFFFF;
-}
+}    
 listview {
     fixed-height: 0;
     border:       8px 0px 0px;
